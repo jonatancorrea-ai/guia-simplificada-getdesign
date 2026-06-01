@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GetDesign Workflow</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f7f7;
+  --text:#0f071e;
+  --accent:#7c3aed;
+  --card:#ffffff;
+  --border:rgba(15,7,30,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Poppins, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(124,58,237,0.08), transparent 40%),
+    var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:rgba(247,247,247,0.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding:12px 16px;
+  z-index:1000;
+}
+
+nav span{
+  font-weight:700;
+  font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:960px;
+  margin:auto;
+  padding:28px 16px;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 10px 40px;
+}
+
+.hero h1{
+  font-size:26px;
+  line-height:1.25;
+  font-weight:700;
+  letter-spacing:-0.2px;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:14px;
+  opacity:0.75;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 18px;
+  background:var(--accent);
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.btn:active{
+  transform:scale(0.96);
+}
+
+/* SECTIONS */
+.section{
+  padding:45px 0;
+  border-top:1px solid var(--border);
+}
+
+h2{
+  font-size:20px;
+  margin-bottom:14px;
+  letter-spacing:-0.2px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:12px;
+  margin:8px 0;
+  font-size:14px;
+  line-height:1.4;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+
+/* FLOW ITEM */
+.flow-item{
+  position:relative;
+}
+
+/* DOT */
+.dot{
+  position:absolute;
+  top:18px;
+  left:-6px;
+  width:10px;
+  height:10px;
+  background:var(--accent);
+  border-radius:50%;
+  box-shadow:0 0 0 6px rgba(124,58,237,0.12);
+}
+
+/* FLOW CARD HOVER */
+.flow-item:hover{
+  transform:translateY(-2px);
+  transition:0.2s;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:60px 10px;
+}
+
+.cta p{
+  font-size:14px;
+  opacity:0.8;
+  margin-top:8px;
+}
+
+small{
+  opacity:0.7;
+}
+
+/* PROGRESS BAR */
+.progress-wrap{
+  background:rgba(15,7,30,0.08);
+  border-radius:999px;
+  height:6px;
+  overflow:hidden;
+  margin-bottom:18px;
+}
+
+#flowProgress{
+  height:100%;
+  width:14%;
+  background:var(--accent);
+  border-radius:999px;
+  transition:0.4s ease;
+}
+
+/* reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:0.6s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width:430px){
+  .hero h1{font-size:24px;}
+  h2{font-size:18px;}
+  .card{font-size:13px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <span>GetDesign Workflow</span>
+</nav>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero reveal">
+  <h1>Crea apps y webs con diseños profesionales en minutos</h1>
+
+  <p>GetDesign + Google AI Studio + Gemini</p>
+
+  <a class="btn" href="#steps">Ver cómo funciona</a>
+</div>
+
+<!-- WHAT IS -->
+<div class="section reveal">
+<h2>❓ ¿Qué es GETDESIGN.MD?</h2>
+
+<div class="card">
+GetDesign.md convierte estilos visuales de webs reales en instrucciones que la IA puede usar para generar interfaces más profesionales.
+</div>
+
+<div class="card">
+En lugar de empezar desde cero, reutilizas sistemas de diseño ya creados por marcas reales.
+</div>
+
+<div class="card">
+📸 Aquí irá la captura de la interfaz principal
+</div>
+</div>
+
+<!-- FLOW++ SECTION -->
+<div class="section reveal" id="steps">
+
+<h2>⚡ Sigue estos pasos y crea en minutos</h2>
+
+<div class="progress-wrap">
+  <div id="flowProgress"></div>
+</div>
+
+<div class="grid">
+
+<div class="card flow-item" data-step="1">
+<div class="dot"></div>
+🟣 <strong>1. GetDesign.md</strong><br>
+Entras a la plataforma
+</div>
+
+<div class="card flow-item" data-step="2">
+<div class="dot"></div>
+🎨 <strong>2. Sistema de diseño</strong><br>
+Seleccionas Stripe, Linear o Apple
+</div>
+
+<div class="card flow-item" data-step="3">
+<div class="dot"></div>
+📋 <strong>3. Copiar comando</strong><br>
+Copias el prompt generado automáticamente
+</div>
+
+<div class="card flow-item" data-step="4">
+<div class="dot"></div>
+🧠 <strong>4. Google AI Studio</strong><br>
+Abres Build en Gemini
+</div>
+
+<div class="card flow-item" data-step="5">
+<div class="dot"></div>
+✍️ <strong>5. System Prompt</strong><br>
+Describes tu app o web
+</div>
+
+<div class="card flow-item" data-step="6">
+<div class="dot"></div>
+🔗 <strong>6. Pegas el comando</strong><br>
+Lo agregas al final del prompt
+</div>
+
+<div class="card flow-item" data-step="7">
+<div class="dot"></div>
+⚡ <strong>7. Resultado</strong><br>
+IA genera tu web en minutos
+</div>
+
+</div>
+</div>
+
+<!-- TOP SYSTEMS -->
+<div class="section reveal">
+<h2>🏆 Top 5 sistemas de diseño más utilizados</h2>
+
+<div class="card">🥇 Stripe → SaaS y fintech premium</div>
+<div class="card">🥈 Linear → startups modernas</div>
+<div class="card">🥉 Apple → minimalismo premium</div>
+<div class="card">🏅 Notion → productividad limpia</div>
+<div class="card">🏅 Airbnb → marketplaces visuales</div>
+</div>
+
+<!-- CTA -->
+<div class="cta reveal">
+<h2>¿Tienes una idea y quieres construir algo con IA?</h2>
+
+<p>Reserva una llamada gratuita conmigo y juntos lo haremos realidad</p>
+
+<a class="btn" href="TU-LINK-DE-CAL.COM">RESERVAR LLAMADA</a>
+</div>
+
+</div>
+
+<script>
+const els=document.querySelectorAll('.reveal');
+
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>{
+    if(i.isIntersecting) i.target.classList.add('show');
+  });
+},{threshold:0.12});
+
+els.forEach(e=>obs.observe(e));
+
+/* FLOW PROGRESS REAL */
+const items = document.querySelectorAll(".flow-item");
+const progress = document.getElementById("flowProgress");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+
+      const step = Number(entry.target.dataset.step);
+      const percent = (step / items.length) * 100;
+
+      progress.style.width = percent + "%";
+
+    }
+  });
+}, { threshold: 0.6 });
+
+items.forEach(item => observer.observe(item));
+</script>
+
+</body>
+</html>
